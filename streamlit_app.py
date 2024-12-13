@@ -1,6 +1,8 @@
 __import__('pysqlite3') 
 import sys 
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+import chromadb
+chromadb.api.client.SharedSystemClient.clear_system_cache()
 import streamlit as st
 from langchain_community.llms import OpenAI
 from langchain.text_splitter import CharacterTextSplitter
